@@ -35,8 +35,8 @@ public class Jogok {
 
     @ManyToMany
     @JoinTable(name = "OperatorJogok", joinColumns = @JoinColumn(name = "jogokFk"),
-            inverseJoinColumns = @JoinColumn(name = "operatorokFk"))
-    private List<Operatorok> operatorok;
+            inverseJoinColumns = @JoinColumn(name = "operatorFk"))
+    private List<Operator> operator;
 
     public Jogok() {
     }

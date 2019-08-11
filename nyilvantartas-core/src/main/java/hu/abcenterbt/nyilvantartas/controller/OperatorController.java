@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import hu.abcenterbt.nyilvantartas.domain.Operatorok;
+import hu.abcenterbt.nyilvantartas.domain.Operator;
 import hu.abcenterbt.nyilvantartas.operator.OperatorClientIF;
 import hu.abcenterbt.nyilvantartas.service.OperatorService;
 
@@ -23,37 +23,42 @@ public class OperatorController implements OperatorClientIF {
     private OperatorService operatorService;
 
     @GetMapping("/operator")
-    public Operatorok elsoOperator() {
+    public Operator elsoOperator() {
         return operatorService.elsoOperator();
     }
 
     @GetMapping("/operator/{id}")
-    public Optional<Operatorok> getOperator(@PathVariable(value = "id") final Long id) {
+    public Optional<Operator> getOperator(@PathVariable(value = "id") final Long id) {
         return operatorService.getOperator(id);
     }
 
     @GetMapping("/operatorok")
-    public List<Operatorok> getOperatorok() {
+    public List<Operator> getOperatorok() {
         return operatorService.getOperatorok();
     }
 
     @PostMapping("/operator")
-    public Operatorok saveOperator(@RequestBody final Operatorok operatorok) {
-        return operatorService.ujOperator(operatorok);
+    public Operator saveOperator(@RequestBody final Operator operator) {
+        return operatorService.ujOperator(operator);
     }
 
     @GetMapping("/vezeteknev/{vezeteknev}")
-    public List<Operatorok> getOperatorByVezeteknev(@PathVariable(value = "vezeteknev") final String vezeteknev) {
+    public List<Operator> getOperatorByVezeteknev(@PathVariable(value = "vezeteknev") final String vezeteknev) {
         return operatorService.getOperatorVezeteknev(vezeteknev);
     }
 
     @PutMapping("/operator")
-    public Operatorok updateOperator(@RequestBody final Operatorok operatorok) {
-        return operatorService.updateOperator(operatorok);
+    public Operator updateOperator(@RequestBody final Operator operator) {
+        return operatorService.updateOperator(operator);
     }
 
     @DeleteMapping("/operator/{id}")
     public void deleteOperator(@PathVariable(value = "id") final Long id) {
         operatorService.deleteOperator(id);
     }
+
+//    @PutMapping
+//    public Operator addJogOperator(@PathVariable(value = "operatorId") final Long operatorId, @PathVariable(value = "jogId") final Long jogId) {
+//        return operatorService.addJogOperator(operatorId, jogId);
+//    }
 }

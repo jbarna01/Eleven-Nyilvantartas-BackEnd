@@ -13,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.validation.Constraint;
 import javax.validation.constraints.NotNull;
 
 import lombok.Getter;
@@ -21,9 +22,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "OPERATOROK")
+@Table(name = "OPERATOR")
 @Access(value = AccessType.FIELD)
-public class Operatorok {
+public class Operator {
 
     @GeneratedValue
     @Id
@@ -47,7 +48,7 @@ public class Operatorok {
     private Instant modositas;
 
     @ManyToMany
-    @JoinTable(name = "OperatorJogok", joinColumns = @JoinColumn(name = "operatorokFk"),
+    @JoinTable(name = "OperatorJogok", joinColumns = @JoinColumn(name = "operatorFk"),
     inverseJoinColumns = @JoinColumn(name = "jogokFk"))
     private List<Jogok> jogok;
 

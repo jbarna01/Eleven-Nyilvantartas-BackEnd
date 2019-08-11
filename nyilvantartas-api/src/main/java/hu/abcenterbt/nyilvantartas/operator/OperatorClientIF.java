@@ -3,22 +3,24 @@ package hu.abcenterbt.nyilvantartas.operator;
 import java.util.List;
 import java.util.Optional;
 
-import hu.abcenterbt.nyilvantartas.domain.Operatorok;
+import hu.abcenterbt.nyilvantartas.domain.Operator;
 
 public interface OperatorClientIF {
 
-    Operatorok elsoOperator();
+    Operator elsoOperator();
 
-    Optional<Operatorok> getOperator(Long id);
+    Optional<Operator> getOperator(Long id);
 
-    List<Operatorok> getOperatorok();
+    List<Operator> getOperatorok();
 
-    Operatorok saveOperator(Operatorok operatorok);
+    Operator saveOperator(Operator operator);
 
-    List<Operatorok> getOperatorByVezeteknev(String vezeteknev);
+    List<Operator> getOperatorByVezeteknev(String vezeteknev);
 
-    Operatorok updateOperator(Operatorok operatorok);
+    Operator updateOperator(Operator operator);
 
     void deleteOperator(Long id);
+
+//    Operator addJogOperator(Long operatorId, Long jogId);
 
 }

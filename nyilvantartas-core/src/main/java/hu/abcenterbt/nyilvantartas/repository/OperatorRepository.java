@@ -5,19 +5,19 @@ import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import hu.abcenterbt.nyilvantartas.domain.Operatorok;
+import hu.abcenterbt.nyilvantartas.domain.Operator;
 
-public interface OperatorRepository extends JpaRepository<Operatorok, Long> {
+public interface OperatorRepository extends JpaRepository<Operator, Long> {
 
-    Optional<Operatorok> findById(Long id);
+    Optional<Operator> findById(Long id);
 
-    Operatorok findFirstByOrderByVezetekNev();
+    Operator findFirstByOrderByVezetekNev();
 
-    List<Operatorok> findAll();
+    List<Operator> findAll();
 
-    Operatorok save(Operatorok operatorok);
+    Operator save(Operator operator);
 
-    List<Operatorok> findByVezetekNev(String vezeteknev);
+    List<Operator> findByVezetekNev(String vezeteknev);
 
     void deleteById(Long id);
 }
