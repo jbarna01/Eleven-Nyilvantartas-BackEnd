@@ -9,4 +9,8 @@ public interface JogokClientIF {
     List<Jogok> getJogok();
 
     Jogok saveJog(Jogok jog);
+
+    Jogok updateJog(Jogok jog);
+
+    void deleteJog(Long id);
 }

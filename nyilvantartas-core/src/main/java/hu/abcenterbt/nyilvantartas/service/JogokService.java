@@ -21,4 +21,12 @@ public class JogokService {
     public Jogok saveJog(final Jogok jog) {
         return jogokRepositrory.save(jog);
     }
+
+    public Jogok updateJog(final Jogok jog) {
+        return jogokRepositrory.save(jog);
+    }
+
+    public void deleteJog(final Long id) {
+        jogokRepositrory.deleteById(id);
+    }
 }

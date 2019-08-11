@@ -38,6 +38,9 @@ public class Jogok {
             inverseJoinColumns = @JoinColumn(name = "operatorokFk"))
     private List<Operatorok> operatorok;
 
+    public Jogok() {
+    }
+
     public Jogok(@NotNull final String code, @NotNull final String megnevezes) {
         this.code = code;
         this.megnevezes = megnevezes;

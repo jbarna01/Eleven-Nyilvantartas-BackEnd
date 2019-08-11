@@ -12,4 +12,5 @@ public interface JogokRepositrory extends JpaRepository<Jogok, Long> {
 
     Jogok save(Jogok jog);
 
+    void deleteById(Long id);
 }
