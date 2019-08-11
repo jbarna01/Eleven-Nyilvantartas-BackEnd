@@ -1,16 +1,24 @@
 package hu.abcenterbt.nyilvantartas.operator;
 
-import hu.abcenterbt.nyilvantartas.domain.Operator;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import java.util.List;
+import java.util.Optional;
+
+import hu.abcenterbt.nyilvantartas.domain.Operatorok;
 
 public interface OperatorClientIF {
 
-    public Operator operator();
+    Operatorok elsoOperator();
 
-    public List<Operator> addOperator(Operator operator);
+    Optional<Operatorok> getOperator(Long id);
+
+    List<Operatorok> getOperatorok();
+
+    Operatorok saveOperator(Operatorok operatorok);
+
+    List<Operatorok> getOperatorByVezeteknev(String vezeteknev);
+
+    Operatorok updateOperator(Operatorok operatorok);
+
+    void deleteOperator(Long id);
 
 }
