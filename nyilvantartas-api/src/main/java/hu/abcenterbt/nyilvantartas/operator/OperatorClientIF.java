@@ -13,6 +13,8 @@ public interface OperatorClientIF {
 
     List<Operator> getOperatorok();
 
+    List<Operator> getAdminOperatorok(String code);
+
     Operator saveOperator(Operator operator);
 
     List<Operator> getOperatorByVezeteknev(String vezeteknev);
@@ -21,6 +23,6 @@ public interface OperatorClientIF {
 
     void deleteOperator(Long id);
 
-//    Operator addJogOperator(Long operatorId, Long jogId);
+    Operator addJogOperator(Long operatorId, Long jogId);
 
 }

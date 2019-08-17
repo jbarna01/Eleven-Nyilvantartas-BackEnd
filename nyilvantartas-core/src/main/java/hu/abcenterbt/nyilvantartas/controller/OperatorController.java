@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import hu.abcenterbt.nyilvantartas.domain.Operator;
@@ -37,6 +38,11 @@ public class OperatorController implements OperatorClientIF {
         return operatorService.getOperatorok();
     }
 
+    @GetMapping("/adminOperatorok/{code}")
+    public List<Operator> getAdminOperatorok(@PathVariable(value = "code") final String code) {
+        return operatorService.getAdminOperatorok(code);
+    }
+
     @PostMapping("/operator")
     public Operator saveOperator(@RequestBody final Operator operator) {
         return operatorService.ujOperator(operator);
@@ -57,8 +63,8 @@ public class OperatorController implements OperatorClientIF {
         operatorService.deleteOperator(id);
     }
 
-//    @PutMapping
-//    public Operator addJogOperator(@PathVariable(value = "operatorId") final Long operatorId, @PathVariable(value = "jogId") final Long jogId) {
-//        return operatorService.addJogOperator(operatorId, jogId);
-//    }
+    @PostMapping("/addJogOperator")
+    public Operator addJogOperator(@RequestParam(value = "operatorId") final Long operatorId, @RequestParam(value = "jogId") final Long jogId) {
+        return operatorService.addJogOperator(operatorId, jogId);
+    }
 }

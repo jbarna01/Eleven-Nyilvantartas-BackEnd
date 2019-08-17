@@ -1,14 +1,15 @@
 package hu.abcenterbt.nyilvantartas.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import hu.abcenterbt.nyilvantartas.domain.Jogok;
-import hu.abcenterbt.nyilvantartas.repository.JogokRepositrory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import hu.abcenterbt.nyilvantartas.domain.Jogok;
 import hu.abcenterbt.nyilvantartas.domain.Operator;
+import hu.abcenterbt.nyilvantartas.repository.JogokRepositrory;
 import hu.abcenterbt.nyilvantartas.repository.OperatorRepository;
 
 @Service
@@ -32,6 +33,10 @@ public class OperatorService {
         return operatorRepository.findAll();
     }
 
+    public List<Operator> getAdminOperatorok(final String code) {
+        return operatorRepository.findAllByJogokCodeIgnoreCaseOrderByVezetekNev(code);
+    }
+
     public Operator ujOperator(final Operator operator) {
         return operatorRepository.save(operator);
     }
@@ -48,10 +53,11 @@ public class OperatorService {
         operatorRepository.deleteById(id);
     }
 
-    public Operator addJogOperator(Long operatorId, Long jogId) {
-        Optional<Operator> operator = operatorRepository.findById(operatorId);
-        Optional<Jogok> jogok = jogokRepositrory.findById(jogId);
-
-        return null;
+    public Operator addJogOperator(final Long operatorId, final Long jogId) {
+        final Optional<Operator> operator = operatorRepository.findById(operatorId);
+        final List<Jogok> jogLista = new ArrayList<>();
+        jogLista.add(jogokRepositrory.findById(jogId).get());
+        operator.get().setJogok(jogLista);
+        return operatorRepository.save(operator.get());
     }
 }
