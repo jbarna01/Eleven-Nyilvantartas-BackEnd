@@ -25,4 +25,6 @@ public interface OperatorClientIF {
 
     Operator addJogOperator(Long operatorId, Long jogId);
 
+
+
 }
