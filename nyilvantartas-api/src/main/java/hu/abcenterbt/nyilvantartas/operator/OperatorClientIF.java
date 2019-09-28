@@ -15,6 +15,8 @@ public interface OperatorClientIF {
 
     List<Operator> getAdminOperatorok(String code);
 
+    Operator loginOperator(Operator operator);
+
     Operator saveOperator(Operator operator);
 
     List<Operator> getOperatorByVezeteknev(String vezeteknev);

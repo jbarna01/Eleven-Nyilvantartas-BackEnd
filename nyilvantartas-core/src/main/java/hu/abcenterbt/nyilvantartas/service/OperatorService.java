@@ -37,6 +37,10 @@ public class OperatorService {
         return operatorRepository.findAllByJogokCodeIgnoreCaseOrderByVezetekNev(code);
     }
 
+    public Operator loginOperator(final Operator operator) {
+        return operatorRepository.findByUsernameAndPassword(operator.getUsername(), operator.getPassword());
+    }
+
     public Operator ujOperator(final Operator operator) {
         return operatorRepository.save(operator);
     }

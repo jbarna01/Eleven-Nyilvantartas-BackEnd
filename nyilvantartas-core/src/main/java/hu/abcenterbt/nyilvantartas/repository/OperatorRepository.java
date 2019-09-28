@@ -19,6 +19,8 @@ public interface OperatorRepository extends JpaRepository<Operator, Long> {
 
     List<Operator> findAllByJogokCodeIgnoreCaseOrderByVezetekNev(String code);
 
+    Operator findByUsernameAndPassword(String username, String password);
+
     Operator save(Operator operator);
 
     List<Operator> findByVezetekNev(String vezeteknev);

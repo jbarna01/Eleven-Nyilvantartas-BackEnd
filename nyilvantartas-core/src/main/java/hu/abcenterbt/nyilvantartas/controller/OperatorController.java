@@ -21,6 +21,7 @@ public class OperatorController implements OperatorClientIF {
         return operatorService.elsoOperator();
     }
 
+    @CrossOrigin
     @GetMapping("/operator/{id}")
     public Optional<Operator> getOperator(@PathVariable(value = "id") final Long id) {
         return operatorService.getOperator(id);
@@ -35,6 +36,12 @@ public class OperatorController implements OperatorClientIF {
     @GetMapping("/adminOperatorok/{code}")
     public List<Operator> getAdminOperatorok(@PathVariable(value = "code") final String code) {
         return operatorService.getAdminOperatorok(code);
+    }
+
+    @CrossOrigin
+    @PostMapping("/loginOperator")
+    public Operator loginOperator(@RequestBody final Operator operator) {
+        return operatorService.loginOperator(operator);
     }
 
     @PostMapping("/operator")
