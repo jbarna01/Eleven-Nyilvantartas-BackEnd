@@ -15,7 +15,7 @@ public interface OperatorClientIF {
 
     List<Operator> getAdminOperatorok(String code);
 
-    Operator loginOperator(Operator operator);
+    Operator loginOperator(String username, String password);
 
     Operator saveOperator(Operator operator);
 

@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="nyilvantartas-core:war exploded">
+    <output-path>$PROJECT_DIR$/nyilvantartas-core/target/nyilvantartas-core-1.0</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="nyilvantartas-core" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: hu.abcenterbt:Eleven-Nyilvantartas-BackEnd-api:1.0" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-web:unknown" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:unknown" />
+          <element id="library" level="project" name="Maven: error:error:unknown" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/nyilvantartas-core/target/nyilvantartas-core-1.0/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="nyilvantartas-core/web/Web" />
+    </root>
+  </artifact>
+</component>

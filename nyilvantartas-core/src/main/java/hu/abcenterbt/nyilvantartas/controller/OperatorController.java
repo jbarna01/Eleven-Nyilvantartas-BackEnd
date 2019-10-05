@@ -39,9 +39,9 @@ public class OperatorController implements OperatorClientIF {
     }
 
     @CrossOrigin
-    @PostMapping("/loginOperator")
-    public Operator loginOperator(@RequestBody final Operator operator) {
-        return operatorService.loginOperator(operator);
+    @GetMapping("/loginOperator/{username}/{password}")
+    public Operator loginOperator(@PathVariable String username, @PathVariable String password) {
+        return operatorService.loginOperator(username, password);
     }
 
     @PostMapping("/operator")
@@ -49,7 +49,7 @@ public class OperatorController implements OperatorClientIF {
         return operatorService.ujOperator(operator);
     }
 
-    @GetMapping("/vezeteknev/{vezeteknev}")
+    @GetMapping("/operator/{vezeteknev}")
     public List<Operator> getOperatorByVezeteknev(@PathVariable(value = "vezeteknev") final String vezeteknev) {
         return operatorService.getOperatorVezeteknev(vezeteknev);
     }

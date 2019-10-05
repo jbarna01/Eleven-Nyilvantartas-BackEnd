@@ -37,8 +37,8 @@ public class OperatorService {
         return operatorRepository.findAllByJogokCodeIgnoreCaseOrderByVezetekNev(code);
     }
 
-    public Operator loginOperator(final Operator operator) {
-        return operatorRepository.findByUsernameAndPassword(operator.getUsername(), operator.getPassword());
+    public Operator loginOperator(final String username, String password) {
+        return operatorRepository.findByUsernameAndPassword(username, password );
     }
 
     public Operator ujOperator(final Operator operator) {
@@ -61,7 +61,7 @@ public class OperatorService {
         final Optional<Operator> operator = operatorRepository.findById(operatorId);
         final List<Jogok> jogLista = new ArrayList<>();
         jogLista.add(jogokRepositrory.findById(jogId).get());
-        operator.get().setJogok(jogLista);
+//        operator.get().setJogok(jogLista);
         return operatorRepository.save(operator.get());
     }
 }
