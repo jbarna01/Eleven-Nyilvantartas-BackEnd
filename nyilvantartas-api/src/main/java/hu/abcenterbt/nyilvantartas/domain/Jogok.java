@@ -15,11 +15,6 @@ import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
 @Entity
 @Table(name = "JOGOK")
 @Access(value = AccessType.FIELD)
@@ -47,5 +42,37 @@ public class Jogok {
     public Jogok(@NotNull final String code, @NotNull final String megnevezes) {
         this.code = code;
         this.megnevezes = megnevezes;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getMegnevezes() {
+        return megnevezes;
+    }
+
+    public void setMegnevezes(String megnevezes) {
+        this.megnevezes = megnevezes;
+    }
+
+    public List<Operator> getOperator() {
+        return operator;
+    }
+
+    public void setOperator(List<Operator> operator) {
+        this.operator = operator;
     }
 }

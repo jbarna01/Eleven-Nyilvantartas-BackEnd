@@ -16,11 +16,6 @@ public class OperatorController implements OperatorClientIF {
     @Autowired
     private OperatorService operatorService;
 
-    @GetMapping("/operator")
-    public Operator elsoOperator() {
-        return operatorService.elsoOperator();
-    }
-
     @CrossOrigin
     @GetMapping("/operator/{id}")
     public Optional<Operator> getOperator(@PathVariable(value = "id") final Long id) {
@@ -33,6 +28,7 @@ public class OperatorController implements OperatorClientIF {
         return operatorService.getOperatorok();
     }
 
+    @CrossOrigin
     @GetMapping("/adminOperatorok/{code}")
     public List<Operator> getAdminOperatorok(@PathVariable(value = "code") final String code) {
         return operatorService.getAdminOperatorok(code);
@@ -44,26 +40,25 @@ public class OperatorController implements OperatorClientIF {
         return operatorService.loginOperator(username, password);
     }
 
+    @CrossOrigin
     @PostMapping("/operator")
     public Operator saveOperator(@RequestBody final Operator operator) {
         return operatorService.ujOperator(operator);
     }
 
-    @GetMapping("/operator/{vezeteknev}")
-    public List<Operator> getOperatorByVezeteknev(@PathVariable(value = "vezeteknev") final String vezeteknev) {
-        return operatorService.getOperatorVezeteknev(vezeteknev);
+    @CrossOrigin
+    @PutMapping("/operator/{id}")
+    public Operator updateOperator(@RequestBody final Operator operator, @PathVariable Long id) {
+        return operatorService.updateOperator(operator, id);
     }
 
-    @PutMapping("/operator")
-    public Operator updateOperator(@RequestBody final Operator operator) {
-        return operatorService.updateOperator(operator);
-    }
-
+    @CrossOrigin
     @DeleteMapping("/operator/{id}")
     public void deleteOperator(@PathVariable(value = "id") final Long id) {
         operatorService.deleteOperator(id);
     }
 
+    @CrossOrigin
     @PostMapping("/addJogOperator")
     public Operator addJogOperator(@RequestParam(value = "operatorId") final Long operatorId, @RequestParam(value = "jogId") final Long jogId) {
         return operatorService.addJogOperator(operatorId, jogId);

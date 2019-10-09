@@ -21,10 +21,6 @@ public class OperatorService {
     @Autowired
     private JogokRepositrory jogokRepositrory;
 
-    public Operator elsoOperator() {
-        return operatorRepository.findFirstByOrderByVezetekNev();
-    }
-
     public Optional<Operator> getOperator(final Long id) {
         return operatorRepository.findById(id);
     }
@@ -45,12 +41,17 @@ public class OperatorService {
         return operatorRepository.save(operator);
     }
 
-    public List<Operator> getOperatorVezeteknev(final String vezeteknev) {
-        return operatorRepository.findByVezetekNev(vezeteknev);
-    }
-
-    public Operator updateOperator(final Operator operator) {
-        return operatorRepository.save(operator);
+    public Operator updateOperator(final Operator operator, final Long id) {
+        Operator _operator = operatorRepository.findById(id)
+                .map(updateOperator -> {
+                    updateOperator.setPassword(operator.getPassword());
+                    return operatorRepository.save(updateOperator);
+                })
+                .orElseGet(() -> {
+            operator.setId(id);
+            return operatorRepository.save(operator);
+        });
+        return _operator;
     }
 
     public void deleteOperator(final Long id) {

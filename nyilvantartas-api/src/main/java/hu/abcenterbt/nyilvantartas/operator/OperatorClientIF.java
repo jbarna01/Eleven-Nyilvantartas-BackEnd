@@ -7,8 +7,6 @@ import hu.abcenterbt.nyilvantartas.domain.Operator;
 
 public interface OperatorClientIF {
 
-    Operator elsoOperator();
-
     Optional<Operator> getOperator(Long id);
 
     List<Operator> getOperatorok();
@@ -19,14 +17,10 @@ public interface OperatorClientIF {
 
     Operator saveOperator(Operator operator);
 
-    List<Operator> getOperatorByVezeteknev(String vezeteknev);
-
-    Operator updateOperator(Operator operator);
+    Operator updateOperator(Operator operator, Long id);
 
     void deleteOperator(Long id);
 
     Operator addJogOperator(Long operatorId, Long jogId);
-
-
 
 }

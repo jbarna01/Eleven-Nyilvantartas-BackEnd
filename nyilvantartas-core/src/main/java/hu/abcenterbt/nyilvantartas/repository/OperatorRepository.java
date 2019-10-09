@@ -23,7 +23,5 @@ public interface OperatorRepository extends JpaRepository<Operator, Long> {
 
     Operator save(Operator operator);
 
-    List<Operator> findByVezetekNev(String vezeteknev);
-
     void deleteById(Long id);
 }

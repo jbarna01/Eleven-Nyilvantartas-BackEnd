@@ -15,11 +15,6 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
 @Entity
 @Table(name = "OPERATOR")
 @Access(value = AccessType.FIELD)
@@ -51,4 +46,67 @@ public class Operator {
     inverseJoinColumns = @JoinColumn(name = "jogokFk"))
     private List<Jogok> jogok;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getVezetekNev() {
+        return vezetekNev;
+    }
+
+    public void setVezetekNev(String vezetekNev) {
+        this.vezetekNev = vezetekNev;
+    }
+
+    public String getKeresztNev() {
+        return keresztNev;
+    }
+
+    public void setKeresztNev(String keresztNev) {
+        this.keresztNev = keresztNev;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getAktiv() {
+        return aktiv;
+    }
+
+    public void setAktiv(String aktiv) {
+        this.aktiv = aktiv;
+    }
+
+    public Instant getModositas() {
+        return modositas;
+    }
+
+    public void setModositas(Instant modositas) {
+        this.modositas = modositas;
+    }
+
+    public List<Jogok> getJogok() {
+        return jogok;
+    }
+
+    public void setJogok(List<Jogok> jogok) {
+        this.jogok = jogok;
+    }
 }
