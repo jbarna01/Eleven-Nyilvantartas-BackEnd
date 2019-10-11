@@ -1,15 +1,10 @@
 package hu.abcenterbt.nyilvantartas.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import hu.abcenterbt.nyilvantartas.domain.Jogok;
 import hu.abcenterbt.nyilvantartas.operator.JogokClientIF;
@@ -21,6 +16,13 @@ public class JogokController implements JogokClientIF {
     @Autowired
     private JogokService jogokService;
 
+    @CrossOrigin
+    @GetMapping("/jog/{id}")
+    public Optional<Jogok> getJog(@PathVariable(value = "id") final Long id) {
+        return jogokService.getJog(id);
+    }
+
+    @CrossOrigin
     @GetMapping("/jogok")
     public List<Jogok> getJogok() {
         return jogokService.getJogok();
@@ -31,10 +33,10 @@ public class JogokController implements JogokClientIF {
         return jogokService.saveJog(jog);
     }
 
-    @PutMapping("/jog")
-    public Jogok updateJog(@RequestBody final Jogok jog) {
-        return jogokService.updateJog(jog);
-    }
+//    @PutMapping("/jog")
+//    public Jogok updateJog(@RequestBody final Jogok jog) {
+//        return jogokService.updateJog(jog);
+//    }
 
     @DeleteMapping("/jog/{id}")
     public void deleteJog(@PathVariable(value = "id") final Long id) {

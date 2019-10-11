@@ -44,7 +44,7 @@ public class OperatorService {
     public Operator updateOperator(final Operator operator, final Long id) {
         Operator _operator = operatorRepository.findById(id)
                 .map(updateOperator -> {
-                    updateOperator.setPassword(operator.getPassword());
+                    updateOperator = operator;
                     return operatorRepository.save(updateOperator);
                 })
                 .orElseGet(() -> {

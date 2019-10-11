@@ -1,6 +1,7 @@
 package hu.abcenterbt.nyilvantartas.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,10 @@ public class JogokService {
 
     @Autowired
     private JogokRepositrory jogokRepositrory;
+
+    public Optional<Jogok> getJog(final Long id) {
+        return jogokRepositrory.findById(id);
+    }
 
     public List<Jogok> getJogok() {
         return jogokRepositrory.findAll();
