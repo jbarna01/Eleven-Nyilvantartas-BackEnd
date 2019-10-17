@@ -2,18 +2,8 @@ package hu.abcenterbt.nyilvantartas.domain;
 
 import java.util.List;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 @Table(name = "JOGOK")
@@ -29,12 +19,6 @@ public class Jogok {
 
     @NotNull
     private String megnevezes;
-
-    @JsonBackReference
-    @ManyToMany
-    @JoinTable(name = "OperatorJogok", joinColumns = @JoinColumn(name = "jogokFk"),
-            inverseJoinColumns = @JoinColumn(name = "operatorFk"))
-    private List<Operator> operator;
 
     public Jogok() {
     }
@@ -68,11 +52,5 @@ public class Jogok {
         this.megnevezes = megnevezes;
     }
 
-    public List<Operator> getOperator() {
-        return operator;
-    }
-
-    public void setOperator(List<Operator> operator) {
-        this.operator = operator;
-    }
 }
+

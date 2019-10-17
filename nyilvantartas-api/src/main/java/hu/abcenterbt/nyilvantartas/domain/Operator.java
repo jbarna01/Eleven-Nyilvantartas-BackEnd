@@ -1,18 +1,8 @@
 package hu.abcenterbt.nyilvantartas.domain;
 
 import java.time.Instant;
-import java.util.List;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -20,10 +10,9 @@ import javax.validation.constraints.NotNull;
 @Access(value = AccessType.FIELD)
 public class Operator {
 
-    @GeneratedValue
     @Id
+    @GeneratedValue
     private Long id;
-
     @NotNull
     private String vezetekNev;
 
@@ -41,10 +30,9 @@ public class Operator {
     @Column(columnDefinition = "datetime default CURRENT_TIMESTAMP")
     private Instant modositas;
 
-    @ManyToMany
-    @JoinTable(name = "OperatorJogok", joinColumns = @JoinColumn(name = "operatorFk"),
-    inverseJoinColumns = @JoinColumn(name = "jogokFk"))
-    private List<Jogok> jogok;
+    @ManyToOne
+    @JoinColumn(name="jog_id")
+    private Jogok jogok;
 
     public Long getId() {
         return id;
@@ -102,11 +90,11 @@ public class Operator {
         this.modositas = modositas;
     }
 
-    public List<Jogok> getJogok() {
+    public Jogok getJogok() {
         return jogok;
     }
 
-    public void setJogok(List<Jogok> jogok) {
+    public void setJogok(Jogok jogok) {
         this.jogok = jogok;
     }
 }

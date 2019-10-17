@@ -7,13 +7,11 @@ import hu.abcenterbt.nyilvantartas.domain.Jogok;
 
 public interface JogokClientIF {
 
-    Optional<Jogok> getJog(Long id);
-
     List<Jogok> getJogok();
 
-    Jogok saveJog(Jogok jog);
+    Optional<Jogok> getJog(Long id);
 
-//    Jogok updateJog(Jogok jog);
+    Jogok saveJog(Jogok jog);
 
     void deleteJog(Long id);
 }

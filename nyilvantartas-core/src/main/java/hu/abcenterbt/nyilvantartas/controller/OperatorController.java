@@ -17,27 +17,15 @@ public class OperatorController implements OperatorClientIF {
     private OperatorService operatorService;
 
     @CrossOrigin
-    @GetMapping("/operator/{id}")
-    public Optional<Operator> getOperator(@PathVariable(value = "id") final Long id) {
-        return operatorService.getOperator(id);
-    }
-
-    @CrossOrigin
-    @GetMapping("/operatorok")
+    @GetMapping("/operator")
     public List<Operator> getOperatorok() {
         return operatorService.getOperatorok();
     }
 
     @CrossOrigin
-    @GetMapping("/adminOperatorok/{code}")
-    public List<Operator> getAdminOperatorok(@PathVariable(value = "code") final String code) {
-        return operatorService.getAdminOperatorok(code);
-    }
-
-    @CrossOrigin
-    @GetMapping("/loginOperator/{username}/{password}")
-    public Operator loginOperator(@PathVariable String username, @PathVariable String password) {
-        return operatorService.loginOperator(username, password);
+    @GetMapping("/operator/{id}")
+    public Optional<Operator> getOperator(@PathVariable(value = "id") final Long id) {
+        return operatorService.getOperator(id);
     }
 
     @CrossOrigin
@@ -59,8 +47,9 @@ public class OperatorController implements OperatorClientIF {
     }
 
     @CrossOrigin
-    @PostMapping("/addJogOperator")
-    public Operator addJogOperator(@RequestParam(value = "operatorId") final Long operatorId, @RequestParam(value = "jogId") final Long jogId) {
-        return operatorService.addJogOperator(operatorId, jogId);
+    @GetMapping("/loginOperator/{username}/{password}")
+    public Operator loginOperator(@PathVariable String username, @PathVariable String password) {
+        return operatorService.loginOperator(username, password);
     }
+
 }

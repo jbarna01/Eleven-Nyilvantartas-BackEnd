@@ -17,26 +17,21 @@ public class JogokController implements JogokClientIF {
     private JogokService jogokService;
 
     @CrossOrigin
-    @GetMapping("/jog/{id}")
-    public Optional<Jogok> getJog(@PathVariable(value = "id") final Long id) {
-        return jogokService.getJog(id);
+    @GetMapping("/jog")
+    public List<Jogok> getJogok() {
+        return jogokService.getJogok();
     }
 
     @CrossOrigin
-    @GetMapping("/jogok")
-    public List<Jogok> getJogok() {
-        return jogokService.getJogok();
+    @GetMapping("/jog/{id}")
+    public Optional<Jogok> getJog(@PathVariable(value = "id") final Long id) {
+        return jogokService.getJog(id);
     }
 
     @PostMapping("/jog")
     public Jogok saveJog(@RequestBody final Jogok jog) {
         return jogokService.saveJog(jog);
     }
-
-//    @PutMapping("/jog")
-//    public Jogok updateJog(@RequestBody final Jogok jog) {
-//        return jogokService.updateJog(jog);
-//    }
 
     @DeleteMapping("/jog/{id}")
     public void deleteJog(@PathVariable(value = "id") final Long id) {

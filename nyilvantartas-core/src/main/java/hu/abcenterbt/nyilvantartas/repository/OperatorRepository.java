@@ -13,11 +13,7 @@ public interface OperatorRepository extends JpaRepository<Operator, Long> {
 
     Optional<Operator> findById(Long id);
 
-    Operator findFirstByOrderByVezetekNev();
-
     List<Operator> findAll();
-
-    List<Operator> findAllByJogokCodeIgnoreCaseOrderByVezetekNev(String code);
 
     Operator findByUsernameAndPassword(String username, String password);
 

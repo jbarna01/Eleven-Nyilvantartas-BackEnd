@@ -11,16 +11,12 @@ public interface OperatorClientIF {
 
     List<Operator> getOperatorok();
 
-    List<Operator> getAdminOperatorok(String code);
-
-    Operator loginOperator(String username, String password);
-
     Operator saveOperator(Operator operator);
 
     Operator updateOperator(Operator operator, Long id);
 
     void deleteOperator(Long id);
 
-    Operator addJogOperator(Long operatorId, Long jogId);
+    Operator loginOperator(String username, String password);
 
 }

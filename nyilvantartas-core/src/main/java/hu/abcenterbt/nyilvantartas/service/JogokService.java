@@ -15,19 +15,15 @@ public class JogokService {
     @Autowired
     private JogokRepositrory jogokRepositrory;
 
-    public Optional<Jogok> getJog(final Long id) {
-        return jogokRepositrory.findById(id);
-    }
-
     public List<Jogok> getJogok() {
         return jogokRepositrory.findAll();
     }
 
-    public Jogok saveJog(final Jogok jog) {
-        return jogokRepositrory.save(jog);
+    public Optional<Jogok> getJog(final Long id) {
+        return jogokRepositrory.findById(id);
     }
 
-    public Jogok updateJog(final Jogok jog) {
+    public Jogok saveJog(final Jogok jog) {
         return jogokRepositrory.save(jog);
     }
 
