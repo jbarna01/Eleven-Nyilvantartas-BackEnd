@@ -1,6 +1,7 @@
 package hu.abcenterbt.nyilvantartas.operator;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import hu.abcenterbt.nyilvantartas.domain.Operator;
@@ -17,6 +18,6 @@ public interface OperatorClientIF {
 
     void deleteOperator(Long id);
 
-    Operator loginOperator(String username, String password);
+    Operator loginOperator(Map<String, String> params);
 
 }

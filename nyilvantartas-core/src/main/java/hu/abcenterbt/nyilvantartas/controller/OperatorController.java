@@ -1,6 +1,7 @@
 package hu.abcenterbt.nyilvantartas.controller;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,9 +48,12 @@ public class OperatorController implements OperatorClientIF {
     }
 
     @CrossOrigin
-    @GetMapping("/loginOperator/{username}/{password}")
-    public Operator loginOperator(@PathVariable String username, @PathVariable String password) {
+//    @GetMapping("/loginOperator/?username={username}&password={password}")
+    @GetMapping("/loginOperator")
+//    public Operator loginOperator(@PathVariable String username, @PathVariable String password) {
+    public Operator loginOperator(@RequestParam Map<String, String> params) {
+        String username = params.get("username");
+        String password = params.get("password");
         return operatorService.loginOperator(username, password);
     }
-
 }
