@@ -24,6 +24,10 @@ public class OperatorService {
         return operatorRepository.findById(id);
     }
 
+    public Operator getOperatorUserName(final String username) {
+        return operatorRepository.findByUsername(username);
+    }
+
     public Operator ujOperator(final Operator operator) {
         return operatorRepository.save(operator);
     }

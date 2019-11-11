@@ -30,6 +30,12 @@ public class OperatorController implements OperatorClientIF {
     }
 
     @CrossOrigin
+    @GetMapping("/operator/username/{username}")
+    public Operator getOperatorUserName(@PathVariable(value = "username") final String username) {
+            return operatorService.getOperatorUserName(username);
+    }
+
+    @CrossOrigin
     @PostMapping("/operator")
     public Operator saveOperator(@RequestBody final Operator operator) {
         return operatorService.ujOperator(operator);

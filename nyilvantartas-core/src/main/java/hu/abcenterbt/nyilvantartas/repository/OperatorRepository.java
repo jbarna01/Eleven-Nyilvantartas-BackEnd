@@ -17,6 +17,8 @@ public interface OperatorRepository extends JpaRepository<Operator, Long> {
 
     Operator findByUsernameAndPassword(String username, String password);
 
+    Operator findByUsername(String username);
+
     Operator save(Operator operator);
 
     void deleteById(Long id);

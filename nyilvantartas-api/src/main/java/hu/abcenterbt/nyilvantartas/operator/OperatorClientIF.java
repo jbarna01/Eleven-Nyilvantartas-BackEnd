@@ -10,6 +10,8 @@ public interface OperatorClientIF {
 
     Optional<Operator> getOperator(Long id);
 
+    Operator getOperatorUserName(String username);
+
     List<Operator> getOperatorok();
 
     Operator saveOperator(Operator operator);
