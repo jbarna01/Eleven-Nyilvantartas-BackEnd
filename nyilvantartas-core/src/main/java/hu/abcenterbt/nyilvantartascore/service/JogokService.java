@@ -3,11 +3,11 @@ package hu.abcenterbt.nyilvantartascore.service;
 import java.util.List;
 import java.util.Optional;
 
-import hu.abcenterbt.nyilvantartascore.repository.JogokRepositrory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import hu.abcenterbt.nyilvantartasapi.domain.Jogok;
+import hu.abcenterbt.nyilvantartascore.repository.JogokRepositrory;
 
 @Service
 public class JogokService {

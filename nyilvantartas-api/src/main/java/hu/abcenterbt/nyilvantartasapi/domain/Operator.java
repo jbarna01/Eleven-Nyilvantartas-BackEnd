@@ -2,10 +2,23 @@ package hu.abcenterbt.nyilvantartasapi.domain;
 
 import java.time.Instant;
 
-import javax.persistence.*;
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
 @Table(name = "OPERATOR")
 @Access(value = AccessType.FIELD)
 public class Operator {
@@ -31,70 +44,6 @@ public class Operator {
     private Instant modositas;
 
     @ManyToOne
-    @JoinColumn(name="jog_id")
+    @JoinColumn(name = "jog_id")
     private Jogok jogok;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getVezetekNev() {
-        return vezetekNev;
-    }
-
-    public void setVezetekNev(String vezetekNev) {
-        this.vezetekNev = vezetekNev;
-    }
-
-    public String getKeresztNev() {
-        return keresztNev;
-    }
-
-    public void setKeresztNev(String keresztNev) {
-        this.keresztNev = keresztNev;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getAktiv() {
-        return aktiv;
-    }
-
-    public void setAktiv(String aktiv) {
-        this.aktiv = aktiv;
-    }
-
-    public Instant getModositas() {
-        return modositas;
-    }
-
-    public void setModositas(Instant modositas) {
-        this.modositas = modositas;
-    }
-
-    public Jogok getJogok() {
-        return jogok;
-    }
-
-    public void setJogok(Jogok jogok) {
-        this.jogok = jogok;
-    }
 }

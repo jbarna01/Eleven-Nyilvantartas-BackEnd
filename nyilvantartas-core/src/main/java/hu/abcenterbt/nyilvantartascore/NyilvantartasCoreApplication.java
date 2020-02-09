@@ -26,7 +26,6 @@ public class NyilvantartasCoreApplication extends SpringBootServletInitializer {
 		return builder.sources(NyilvantartasCoreApplication.class);
 	}
 
-
 	@Bean
 	public Docket productApi() {
 		return new Docket(DocumentationType.SWAGGER_2).select()

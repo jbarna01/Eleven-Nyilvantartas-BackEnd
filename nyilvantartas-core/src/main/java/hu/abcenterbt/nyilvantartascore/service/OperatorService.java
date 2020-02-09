@@ -3,11 +3,11 @@ package hu.abcenterbt.nyilvantartascore.service;
 import java.util.List;
 import java.util.Optional;
 
-import hu.abcenterbt.nyilvantartascore.repository.OperatorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import hu.abcenterbt.nyilvantartasapi.domain.Operator;
+import hu.abcenterbt.nyilvantartascore.repository.OperatorRepository;
 
 @Service
 public class OperatorService {
@@ -32,7 +32,7 @@ public class OperatorService {
     }
 
     public Operator updateOperator(final Operator operator, final Long id) {
-        Operator _operator = operatorRepository.findById(id)
+        final Operator _operator = operatorRepository.findById(id)
                 .map(updateOperator -> {
                     updateOperator = operator;
                     return operatorRepository.save(updateOperator);
@@ -48,8 +48,8 @@ public class OperatorService {
         operatorRepository.deleteById(id);
     }
 
-    public Operator loginOperator(final String username, String password) {
-        return operatorRepository.findByUsernameAndPassword(username, password );
+    public Operator loginOperator(final String username, final String password) {
+        return operatorRepository.findByUsernameAndPassword(username, password);
     }
 
 }
