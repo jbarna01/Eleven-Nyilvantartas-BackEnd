@@ -11,15 +11,17 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11">
-      <module name="Eleven-Nyilvantartas-BackEnd" target="1.8" />
-      <module name="nyilvantartas-api" target="1.8" />
-      <module name="nyilvantartas-core" target="1.8" />
+      <module name="Eleven-Nyilvantartas-BackEnd" target="11" />
+      <module name="nyilvantartas-api" target="11" />
+      <module name="nyilvantartas-core" target="11" />
+      <module name="nyilvantartas-db" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="nyilvantartas-api" options="-parameters" />
       <module name="nyilvantartas-core" options="-parameters" />
+      <module name="nyilvantartas-db" options="-parameters" />
     </option>
   </component>
 </project>
