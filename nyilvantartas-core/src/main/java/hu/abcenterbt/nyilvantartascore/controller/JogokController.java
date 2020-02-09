@@ -1,4 +1,4 @@
-package hu.abcenterbt.nyilvantartas.controller;
+package hu.abcenterbt.nyilvantartascore.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,9 +6,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import hu.abcenterbt.nyilvantartas.domain.Jogok;
-import hu.abcenterbt.nyilvantartas.operator.JogokClientIF;
-import hu.abcenterbt.nyilvantartas.service.JogokService;
+import hu.abcenterbt.nyilvantartasapi.domain.Jogok;
+import hu.abcenterbt.nyilvantartasapi.operator.JogokClientIF;
+import hu.abcenterbt.nyilvantartascore.service.JogokService;
 
 @RestController
 public class JogokController implements JogokClientIF {

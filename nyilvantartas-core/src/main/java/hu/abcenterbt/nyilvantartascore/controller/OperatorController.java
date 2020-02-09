@@ -1,4 +1,4 @@
-package hu.abcenterbt.nyilvantartas.controller;
+package hu.abcenterbt.nyilvantartascore.controller;
 
 import java.util.List;
 import java.util.Map;
@@ -7,9 +7,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import hu.abcenterbt.nyilvantartas.domain.Operator;
-import hu.abcenterbt.nyilvantartas.operator.OperatorClientIF;
-import hu.abcenterbt.nyilvantartas.service.OperatorService;
+import hu.abcenterbt.nyilvantartasapi.domain.Operator;
+import hu.abcenterbt.nyilvantartasapi.operator.OperatorClientIF;
+import hu.abcenterbt.nyilvantartascore.service.OperatorService;
 
 @RestController
 public class OperatorController implements OperatorClientIF {

@@ -1,6 +1,4 @@
-package hu.abcenterbt.nyilvantartas.domain;
-
-import java.util.List;
+package hu.abcenterbt.nyilvantartasapi.domain;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

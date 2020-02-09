@@ -1,10 +1,10 @@
-package hu.abcenterbt.nyilvantartas.operator;
+package hu.abcenterbt.nyilvantartasapi.operator;
 
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-import hu.abcenterbt.nyilvantartas.domain.Operator;
+import hu.abcenterbt.nyilvantartasapi.domain.Operator;
 
 public interface OperatorClientIF {
 

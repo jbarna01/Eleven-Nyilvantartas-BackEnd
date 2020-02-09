@@ -1,9 +1,9 @@
-package hu.abcenterbt.nyilvantartas.operator;
+package hu.abcenterbt.nyilvantartasapi.operator;
 
 import java.util.List;
 import java.util.Optional;
 
-import hu.abcenterbt.nyilvantartas.domain.Jogok;
+import hu.abcenterbt.nyilvantartasapi.domain.Jogok;
 
 public interface JogokClientIF {
 

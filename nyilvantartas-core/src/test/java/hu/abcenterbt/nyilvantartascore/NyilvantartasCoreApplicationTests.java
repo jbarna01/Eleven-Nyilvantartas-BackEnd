@@ -1,4 +1,4 @@
-package hu.abcenterbt.nyilvantartas;
+package hu.abcenterbt.nyilvantartascore;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

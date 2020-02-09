@@ -1,11 +1,11 @@
-package hu.abcenterbt.nyilvantartas.repository;
+package hu.abcenterbt.nyilvantartascore.repository;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import hu.abcenterbt.nyilvantartas.domain.Jogok;
+import hu.abcenterbt.nyilvantartasapi.domain.Jogok;
 
 public interface JogokRepositrory extends JpaRepository<Jogok, Long> {
 

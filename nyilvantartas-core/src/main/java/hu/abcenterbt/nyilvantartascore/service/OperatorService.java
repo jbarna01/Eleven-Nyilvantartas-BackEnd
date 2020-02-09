@@ -1,14 +1,13 @@
-package hu.abcenterbt.nyilvantartas.service;
+package hu.abcenterbt.nyilvantartascore.service;
 
 import java.util.List;
 import java.util.Optional;
 
+import hu.abcenterbt.nyilvantartascore.repository.OperatorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import hu.abcenterbt.nyilvantartas.domain.Operator;
-import hu.abcenterbt.nyilvantartas.repository.JogokRepositrory;
-import hu.abcenterbt.nyilvantartas.repository.OperatorRepository;
+import hu.abcenterbt.nyilvantartasapi.domain.Operator;
 
 @Service
 public class OperatorService {

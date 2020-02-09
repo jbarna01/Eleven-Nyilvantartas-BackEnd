@@ -10,7 +10,7 @@
         <module name="nyilvantartas-api" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="11">
       <module name="Eleven-Nyilvantartas-BackEnd" target="1.8" />
       <module name="nyilvantartas-api" target="1.8" />
       <module name="nyilvantartas-core" target="1.8" />

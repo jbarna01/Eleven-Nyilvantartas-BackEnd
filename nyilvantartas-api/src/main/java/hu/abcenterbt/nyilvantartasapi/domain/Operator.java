@@ -1,4 +1,4 @@
-package hu.abcenterbt.nyilvantartas.domain;
+package hu.abcenterbt.nyilvantartasapi.domain;
 
 import java.time.Instant;
 
