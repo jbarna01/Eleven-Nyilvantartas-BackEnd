@@ -2,18 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.1.7.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-<!--    <parent>-->
-<!--        <artifactId>Eleven-Nyilvantartas-BackEnd</artifactId>-->
-<!--        <groupId>hu.abcenterbt</groupId>-->
-<!--        <version>1.0</version>-->
-<!--    </parent>-->
-    <modelVersion>4.0.0</modelVersion>
 
     <groupId>hu.abcenterbt</groupId>
     <artifactId>nyilvantartas-db</artifactId>
@@ -30,20 +25,20 @@
         <dir.flyway.test>${dir.flyway},filesystem:${project.basedir}/src/main/resources_teszt/db</dir.flyway.test>
         <flyway.locations>${dir.flyway}</flyway.locations>
 
-        <!-- ===[ NYILVANTARTAS DB PROPERTY-K]============================================ -->
-        <database.type>sqlserver</database.type>
-        <database.driver.groupId>com.microsoft.sqlserver</database.driver.groupId>
-        <database.driver.artifactId>mssql-jdbc</database.driver.artifactId>
-        <database.driver.version>8.2.0.jre11</database.driver.version>
+        <!-- ===[ CAMPUS DB PROPERTY-K]============================================ -->
+        <database.type>postgresql</database.type>
+        <database.driver.groupId>org.postgresql</database.driver.groupId>
+        <database.driver.artifactId>postgresql</database.driver.artifactId>
+        <database.driver.version>42.2.8</database.driver.version>
         <!--        <database.type>postgresql</database.type>-->
         <!--TESZT-->
         <!--        <database.flyway.url>jdbc:postgresql://193.225.40.245:5432/campusticket</database.flyway.url>-->
         <!--        <database.flyway.user>campus</database.flyway.user>-->
         <!--        <database.flyway.password>3A3QFpghSxyxN3jx</database.flyway.password>-->
         <!--LOCAL-->
-        <database.flyway.url>jdbc:sqlserver://localhost:1433;databaseName=nyilvantartas</database.flyway.url>
-        <database.flyway.user>sa</database.flyway.user>
-        <database.flyway.password>.sasasasa.</database.flyway.password>
+        <database.flyway.url>jdbc:postgresql://localhost:5432/eleven-nyilvantartas</database.flyway.url>
+        <database.flyway.user>postgres</database.flyway.user>
+        <database.flyway.password>campus</database.flyway.password>
 
         <!-- ===[ BUILD ]======================================================= -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -94,7 +89,7 @@
             </build>
         </profile>
         <profile>
-            <id>campus-fejl</id>
+            <id>eleven-fejl</id>
             <properties>
                 <database.type>postgresql</database.type>
                 <flyway.url>${database.flyway.url}</flyway.url>
@@ -103,5 +98,14 @@
             </properties>
         </profile>
     </profiles>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

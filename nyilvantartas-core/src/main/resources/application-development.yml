@@ -1,0 +1,24 @@
+spring:
+  profiles:
+    include: ConfigureSecurity, InjectSeedData, SwaggerEnabled, EnableMessageQueueIntegration
+  datasource:
+    url: jdbc:postgresql://localhost:5432/eleven-nyilvantartas
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: campus
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        show_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          lob:
+            non_contextual_creation: true
+  liquibase:
+    labels: test
+  data:
+    ldap:
+      repositories:
+        enabled: true
