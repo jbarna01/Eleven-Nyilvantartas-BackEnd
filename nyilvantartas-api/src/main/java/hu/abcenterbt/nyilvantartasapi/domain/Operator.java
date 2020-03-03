@@ -38,12 +38,12 @@ public class Operator {
     private String password;
 
     @Column(columnDefinition = "VARCHAR default 'A'")
-    private String aktiv;
+    private String status;
 
     @Column(columnDefinition = "datetime default CURRENT_TIMESTAMP")
     private Instant modositas;
 
     @ManyToOne
-    @JoinColumn(name = "jog_id")
+    @JoinColumn(name = "jogok_fk")
     private Jogok jogok;
 }

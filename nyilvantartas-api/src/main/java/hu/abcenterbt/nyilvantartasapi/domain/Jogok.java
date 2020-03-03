@@ -28,6 +28,8 @@ public class Jogok {
     @NotNull
     private String megnevezes;
 
+    private String status;
+
     public Jogok() {
     }
 

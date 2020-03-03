@@ -25,7 +25,7 @@ public class OperatorController implements OperatorClientIF {
     private OperatorService operatorService;
 
     @CrossOrigin
-    @GetMapping("/operator")
+    @GetMapping("/operatorok")
     public List<Operator> getOperatorok() {
         return operatorService.getOperatorok();
     }
