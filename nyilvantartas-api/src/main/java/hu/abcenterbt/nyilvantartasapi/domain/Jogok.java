@@ -1,9 +1,22 @@
 package hu.abcenterbt.nyilvantartasapi.domain;
 
-import javax.persistence.*;
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.envers.Audited;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 @Entity
+@Audited
 @Table(name = "JOGOK")
 @Access(value = AccessType.FIELD)
 public class Jogok {
@@ -25,30 +38,5 @@ public class Jogok {
         this.code = code;
         this.megnevezes = megnevezes;
     }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public String getMegnevezes() {
-        return megnevezes;
-    }
-
-    public void setMegnevezes(String megnevezes) {
-        this.megnevezes = megnevezes;
-    }
-
 }
 

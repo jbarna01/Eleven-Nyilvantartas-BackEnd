@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/Eleven-Nyilvantartas-BackEnd.iml" filepath="$PROJECT_DIR$/.idea/Eleven-Nyilvantartas-BackEnd.iml" />
       <module fileurl="file://$PROJECT_DIR$/nyilvantartas-api/nyilvantartas-api.iml" filepath="$PROJECT_DIR$/nyilvantartas-api/nyilvantartas-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/nyilvantartas-core/nyilvantartas-core.iml" filepath="$PROJECT_DIR$/nyilvantartas-core/nyilvantartas-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nyilvantartas-db/nyilvantartas-db.iml" filepath="$PROJECT_DIR$/nyilvantartas-db/nyilvantartas-db.iml" />
     </modules>
   </component>
 </project>
