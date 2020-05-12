@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -61,7 +60,7 @@ public class JogokController implements JogokClientIf {
      * @param id a törlendő rekord ID-ja.
      */
     @DeleteMapping("/")
-    public void deleteJog(@PathVariable(value = "id") final Long id) {
+    public void deleteJog(@RequestParam(value = "id") final Long id) {
         jogokService.deleteJog(id);
     }
 }
