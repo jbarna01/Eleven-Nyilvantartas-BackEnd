@@ -17,6 +17,7 @@ public class OperatorService {
 
     /**
      * Visszaadja az összes Operátort.
+     *
      * @return Operátor lista.
      */
     public List<Operator> getOperatorok() {
@@ -25,6 +26,7 @@ public class OperatorService {
 
     /**
      * Visszaadja az ID által meghatározott Operátor-t.
+     *
      * @param id a kért operátos ID-ja.
      * @return Operátor objektum.
      */
@@ -34,6 +36,7 @@ public class OperatorService {
 
     /**
      * Visszaadja az username által meghatározott Operátor-t.
+     *
      * @param username a kért operátos username-ja.
      * @return Operátor objektum.
      */
@@ -43,6 +46,7 @@ public class OperatorService {
 
     /**
      * Menti a paraméterben megadott Operátort.
+     *
      * @param operator mentendő operátor.
      * @return mentett Operátor objektum.
      */
@@ -52,8 +56,9 @@ public class OperatorService {
 
     /**
      * Módosítja az ID által meghatározott Operátort.
+     *
      * @param operator új operátor objektum
-     * @param id módosítandó operátor Id-ja.
+     * @param id       módosítandó operátor Id-ja.
      * @return módosított Operátor objektum.
      */
     public Operator updateOperator(final Operator operator, final Long id) {
@@ -71,6 +76,7 @@ public class OperatorService {
 
     /**
      * Törli az ID által meghatározott Operátort.
+     *
      * @param id Törölni kívánt operárátor ID-ja.
      */
     public void deleteOperator(final Long id) {
@@ -79,6 +85,7 @@ public class OperatorService {
 
     /**
      * Visszaadja a username és a password által meghatározott operátort.
+     *
      * @param username a belépő felhasználó username.
      * @param password abelépő felhasználó jelszava.
      * @return a feltételnek megfelelő Operátor objektum.

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="issues">
+    <option name="index">
+      <map>
+        <entry key="/Dummy.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Eleven-Nyilvantartas-FrontEnd/src/app/components/login/login.component.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Eleven-Nyilvantartas-FrontEnd/src/app/components/operatorok/dialogs/jelszo-modositas/jelszo-modositas.component.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Eleven-Nyilvantartas-FrontEnd/src/app/components/operatorok/dialogs/jelszo-modositas/jelszo-modositas.component.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Eleven-Nyilvantartas-FrontEnd/src/app/components/operatorok/dialogs/karbantartas/operator-adatok.component.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Eleven-Nyilvantartas-FrontEnd/src/app/services/globals.service.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

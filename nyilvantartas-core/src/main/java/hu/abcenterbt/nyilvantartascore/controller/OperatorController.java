@@ -27,6 +27,7 @@ public class OperatorController implements OperatorClientIf {
 
     /**
      * Visszaadja az összes Operátort.
+     *
      * @return Operátor lista.
      */
     @CrossOrigin
@@ -37,6 +38,7 @@ public class OperatorController implements OperatorClientIf {
 
     /**
      * Visszaadja az ID által meghatározott Operátor-t.
+     *
      * @param id a kért operátos ID-ja.
      * @return Operátor objektum.
      */
@@ -48,6 +50,7 @@ public class OperatorController implements OperatorClientIf {
 
     /**
      * Visszaadja az username által meghatározott Operátor-t.
+     *
      * @param username a kért operátos username-ja.
      * @return Operátor objektum.
      */
@@ -59,19 +62,21 @@ public class OperatorController implements OperatorClientIf {
 
     /**
      * Menti a paraméterben megadott Operátort.
+     *
      * @param operator mentendő operátor.
      * @return mentett Operátor objektum.
      */
     @CrossOrigin
-    @PostMapping("/operator")
+    @PostMapping("/")
     public Operator saveOperator(@RequestBody final Operator operator) {
         return operatorService.ujOperator(operator);
     }
 
     /**
      * Módosítja az ID által meghatározott Operátort.
+     *
      * @param operator új operátor objektum
-     * @param id módosítandó operátor Id-ja.
+     * @param id       módosítandó operátor Id-ja.
      * @return módosított Operátor objektum.
      */
     @CrossOrigin
@@ -82,6 +87,7 @@ public class OperatorController implements OperatorClientIf {
 
     /**
      * Törli az ID által meghatározott Operátort.
+     *
      * @param id Törölni kívánt operárátor ID-ja.
      */
     @CrossOrigin
@@ -92,14 +98,15 @@ public class OperatorController implements OperatorClientIf {
 
     /**
      * Visszaadja a username és a password által meghatározott operátort.
+     *
      * @param username a belépő felhasználó username.
      * @param password abelépő felhasználó jelszava.
      * @return a feltételnek megfelelő Operátor objektum.
      */
     @CrossOrigin
     @GetMapping("/loginOperator")
-    public Operator loginOperator(@RequestParam (value = "username") final String username,
-                                  @RequestParam (value = "password") final String password) {
+    public Operator loginOperator(@RequestParam(value = "username") final String username,
+                                  @RequestParam(value = "password") final String password) {
         return operatorService.loginOperator(username, password);
     }
 }

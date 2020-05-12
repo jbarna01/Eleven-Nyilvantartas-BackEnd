@@ -17,6 +17,7 @@ public class JogokService {
 
     /**
      * Visszaadja az összes jogot.
+     *
      * @return Jogok lista.
      */
     public List<Jogok> getJogok() {
@@ -25,6 +26,7 @@ public class JogokService {
 
     /**
      * Visszaadja az ID által meghatározott jogot.
+     *
      * @param id a kereset jog ID-ja.
      * @return Jog objektum.
      */
@@ -34,6 +36,7 @@ public class JogokService {
 
     /**
      * Menti a paraméterben megadott Jog objektumot.
+     *
      * @param jog mentendő objektum.
      * @return Mentett JOG objektum.
      */
@@ -43,6 +46,7 @@ public class JogokService {
 
     /**
      * Törli az ID-val meghatározott jog rekordot.
+     *
      * @param id a törlendő rekord ID-ja.
      */
     public void deleteJog(final Long id) {

@@ -2,17 +2,17 @@ spring:
   profiles:
     include: ConfigureSecurity, InjectSeedData, SwaggerEnabled, EnableMessageQueueIntegration
   datasource:
-    url: jdbc:postgresql://localhost:5432/eleven-nyilvantartas
-    driver-class-name: org.postgresql.Driver
-    username: postgres
-    password: campus
+    url: jdbc:sqlserver://localhost:1433;databaseName=elevennyilvantartas
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    username: sa
+    password: .sasasasa.
   jpa:
     hibernate:
       ddl-auto: none
     properties:
       hibernate:
-        show_sql: true
-        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show-sql: true
+        dialect: org.hibernate.dialect.SQLServer2012Dialect
         jdbc:
           lob:
             non_contextual_creation: true
