@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/nyilvantartas-db/src/main/resources/db/0.1.0/V0.1.0_001__BJ_nyt_verzio_tabla_letrehozasa.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/nyilvantartas-db/src/main/resources/db/0.1.0/V0.1.0_002__BJ_operator_tabla_letrehozasa.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/nyilvantartas-db/src/main/resources/db/0.1.0/V0.1.0_003__BJ_jogok_tabla_letrehozasa.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/nyilvantartas-db/src/main/resources/db/0.1.0/V0.1.0_004__BJ_operator_jogok_foreign_key.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/nyilvantartas-db/src/main/resources/db/0.1.0/V0.1.0_005__BJ_alap_jogok_beszurasa.sql" dialect="TSQL" />
+  </component>
+</project>

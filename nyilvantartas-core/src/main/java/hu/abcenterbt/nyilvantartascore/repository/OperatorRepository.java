@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import hu.abcenterbt.nyilvantartasapi.domain.Operator;
+import hu.abcenterbt.nyilvantartasapi.hitelesites.entity.Operator;
 
 @Repository
 public interface OperatorRepository extends JpaRepository<Operator, Long> {
@@ -17,9 +17,8 @@ public interface OperatorRepository extends JpaRepository<Operator, Long> {
 
     Operator findByUsernameAndPassword(String username, String password);
 
-    Operator findByUsername(String username);
+    Optional<Operator> findByUsername(String username);
 
     Operator save(Operator operator);
 
-    void deleteById(Long id);
 }

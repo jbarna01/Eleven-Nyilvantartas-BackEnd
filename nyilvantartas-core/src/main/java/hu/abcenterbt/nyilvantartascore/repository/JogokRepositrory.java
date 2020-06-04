@@ -4,9 +4,9 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import hu.abcenterbt.nyilvantartasapi.domain.Jogok;
 import org.springframework.stereotype.Repository;
+
+import hu.abcenterbt.nyilvantartasapi.hitelesites.entity.Jogok;
 
 @Repository
 public interface JogokRepositrory extends JpaRepository<Jogok, Long> {

@@ -1,6 +1,0 @@
-CREATE TABLE IF NOT EXISTS NYT_VERZIO (
-       ID              BIGINT          NOT NULL DEFAULT nextval('seq_nyt_verzio'),
-       IDOPONT         VARCHAR(50)     NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
-       SCRIPT_NEV      VARCHAR(255)     NOT NULL,
-       CONSTRAINT PK_CT_VERZIO PRIMARY KEY (ID)
-);

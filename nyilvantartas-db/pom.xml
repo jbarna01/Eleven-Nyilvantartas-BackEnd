@@ -26,7 +26,7 @@
         <database.driver.groupId>com.microsoft.sqlserver</database.driver.groupId>
         <database.driver.artifactId>mssql-jdbc</database.driver.artifactId>
         <database.driver.version>8.3.0.jre11-preview</database.driver.version>
-        <database.flyway.url>jdbc:sqlserver://localhost:1433/elevennyilvantartas</database.flyway.url>
+        <database.flyway.url>jdbc:sqlserver://localhost:1433;databaseName=elevennyilvantartas</database.flyway.url>
         <database.flyway.user>sa</database.flyway.user>
         <database.flyway.password>.sasasasa.</database.flyway.password>
 

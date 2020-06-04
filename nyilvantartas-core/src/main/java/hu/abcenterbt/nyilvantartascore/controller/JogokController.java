@@ -1,7 +1,8 @@
 package hu.abcenterbt.nyilvantartascore.controller;
 
 import java.util.List;
-import java.util.Optional;
+
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -13,8 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import hu.abcenterbt.nyilvantartasapi.domain.Jogok;
-import hu.abcenterbt.nyilvantartasapi.operator.JogokClientIf;
+import hu.abcenterbt.nyilvantartasapi.hitelesites.JogokClientIf;
+import hu.abcenterbt.nyilvantartasapi.hitelesites.dto.JogokDTO;
+import hu.abcenterbt.nyilvantartasapi.hitelesites.entity.Jogok;
+import hu.abcenterbt.nyilvantartasapi.response.NyilvantartasError;
+import hu.abcenterbt.nyilvantartasapi.response.Result;
 import hu.abcenterbt.nyilvantartascore.service.JogokService;
 
 @RestController
@@ -26,45 +30,45 @@ public class JogokController implements JogokClientIf {
 
     /**
      * Visszaadja az összes jogot.
-     *
      * @return Jogok lista.
      */
     @CrossOrigin
     @GetMapping("/jogok")
-    public List<Jogok> getJogok() {
-        return jogokService.getJogok();
+    public Result<List<Jogok>> getJogok() {
+        return new Result<>(jogokService.getJogok());
     }
 
     /**
      * Visszaadja az ID által meghatározott jogot.
-     *
      * @param id a kereset jog ID-ja.
      * @return Jog objektum.
      */
     @CrossOrigin
     @GetMapping("/")
-    public Optional<Jogok> getJog(@RequestParam(value = "id") final Long id) {
-        return jogokService.getJog(id);
+    public Result<Jogok> getJog(@RequestParam(value = "id") final Long id) {
+        return jogokService.getJog(id)
+                .map(Result::new)
+                .orElseGet(() -> Result.error(NyilvantartasError.ct201(Jogok.class.getName(), id)));
     }
 
     /**
      * Menti a paraméterben megadott Jog objektumot.
-     *
      * @param jog mentendő objektum.
      * @return Mentett JOG objektum.
      */
     @PostMapping("/")
-    public Jogok saveJog(@RequestBody final Jogok jog) {
-        return jogokService.saveJog(jog);
+    public Result<Jogok> saveJog(@RequestBody @Valid final JogokDTO jog) {
+        return new Result<>(jogokService.saveJog(jog));
     }
 
     /**
      * Törli az ID-val meghatározott jog rekordot.
-     *
      * @param id a törlendő rekord ID-ja.
+     * @return Result
      */
     @DeleteMapping("/")
-    public void deleteJog(@RequestParam(value = "id") final Long id) {
+    public Result deleteJog(@RequestParam(value = "id") final Long id) {
         jogokService.deleteJog(id);
+        return Result.ok();
     }
 }
