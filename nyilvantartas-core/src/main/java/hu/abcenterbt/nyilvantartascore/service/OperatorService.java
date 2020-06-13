@@ -1,5 +1,7 @@
 package hu.abcenterbt.nyilvantartascore.service;
 
+import java.time.Instant;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -51,6 +53,8 @@ public class OperatorService {
     public Operator saveOperator(final OperatorDTO operatorDTO) {
         final Operator operator = new Operator();
         BeanUtils.copyProperties(operatorDTO, operator);
+        operator.setModositoId(1L);
+        operator.setModositas(Instant.now());
         return operatorRepository.save(operator);
     }
 
