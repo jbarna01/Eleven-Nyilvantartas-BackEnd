@@ -25,6 +25,7 @@ spring:
             revision_type_field_name: VERZIO_TIPUS
             revission_on_collection_change: true
             store_data_at_delete: true
+            default_schema: dbo
     hibernate:
       use-new-id-generator-mappings: false
 logging:

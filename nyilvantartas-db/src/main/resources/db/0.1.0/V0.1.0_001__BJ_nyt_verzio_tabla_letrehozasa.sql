@@ -11,3 +11,10 @@ GO
 
 ALTER TABLE nyt_verzio ADD  CONSTRAINT DF_nyt_verzio_date  DEFAULT (getdate()) FOR idopont
 GO
+
+CREATE TABLE revinfo(
+   rev             bigint IDENTITY(1,1) NOT NULL,
+   revtstmp        bigint NULL
+)
+GO
+

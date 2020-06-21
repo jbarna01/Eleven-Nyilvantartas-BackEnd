@@ -55,6 +55,7 @@ public class OperatorService {
         BeanUtils.copyProperties(operatorDTO, operator);
         operator.setModositoId(1L);
         operator.setModositas(Instant.now());
+
         return operatorRepository.save(operator);
     }
 
