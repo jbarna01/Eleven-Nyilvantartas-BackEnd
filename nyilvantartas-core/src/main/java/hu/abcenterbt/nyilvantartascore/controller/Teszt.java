@@ -9,4 +9,6 @@ public class Teszt {
 
     //Teszt02
     //Teszt03 commit
+
+    //Master commit 01
 }
