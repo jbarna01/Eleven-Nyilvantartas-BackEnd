@@ -11,4 +11,6 @@ public class Teszt {
     //Teszt03 commit
 
     //Master commit 01
+
+    //Szoveg a BJ_002 brach-en
 }
