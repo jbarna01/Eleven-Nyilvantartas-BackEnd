@@ -11,4 +11,6 @@ public class Teszt {
     //Teszt03 commit
 
     //Master commit 01
+    
+    // Második branc utáni szöveg irás a master branchen.
 }
